@@ -1,0 +1,6 @@
+.idea/
+*.pyc
+.ebextensions
+.elasticbeanstalk
+Dockerrun.aws.json
+Dockerfile

@@ -55,6 +55,8 @@ class ProductSerializer(serializers.ModelSerializer):
 
         discount_value = attrs['discount_value']
         value = attrs['value']
+        if not isinstance(value, float):
+            raise serializers.ValidationError({"discount_value": 'Value have an error'})
 
         if isinstance(value, float) and discount_value >= value:
             raise serializers.ValidationError({"discount_value": 'Invalid discount value'})
